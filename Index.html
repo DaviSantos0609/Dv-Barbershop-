@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DV Barbershop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
+      color: #00d9ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, select, button {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #00d9ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .whatsapp {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .whatsapp a {
+      color: #00ff7f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DV Barbershop</h1>
+    <nav><a href="#agendamento">Agendar</a></nav>
+  </header>  <div class="container">
+    <h2 id="agendamento">Agende seu horário</h2>
+    <p>Atendimentos aos finais de semana ou conforme combinado. Duração do corte: 1h10min</p><form onsubmit="enviarAgendamento(); return false;">
+  <input type="text" id="nome" placeholder="Seu nome" required>
+  <input type="tel" id="telefone" placeholder="Seu telefone" required>
+  <input type="date" id="data" required>
+  <select id="hora" required>
+    <option value="">Escolha um horário</option>
+    <option>10:00</option>
+    <option>11:00</option>
+    <option>12:00</option>
+    <option>13:00</option>
+    <option>14:00</option>
+    <option>15:00</option>
+    <option>16:00</option>
+    <option>17:00</option>
+    <option>18:00</option>
+  </select>
+  <button type="submit">Agendar Corte</button>
+</form>
+
+<div class="whatsapp">
+  <p>Ou se preferir, <a href="https://wa.me/5511966520337" target="_blank">fale comigo no WhatsApp</a></p>
+</div>
+
+  </div>  <script>
+    function enviarAgendamento() {
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+
+      alert("Agendamento enviado!\n\n" +
+            "Nome: " + nome + "\n" +
+            "Telefone: " + telefone + "\n" +
+            "Data: " + data + "\n" +
+            "Horário: " + hora + "\n\n" +
+            "O corte será de 1h10min. Obrigado!");
+
+      document.querySelector('form').reset();
+    }
+  </script></body>
+</html>
